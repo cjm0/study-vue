@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	body{
+		margin: 100px;
+	}
+</style>
+</head>
+<body>
+<div>
+	<select name="" id="">
+		<option value="男"></option>
+	</select>
+</div>
+<pre>
+
+vue笔记
+
+1.mvc & mvvm
+mvc   is model view controll === data view js
+mvvm  is model view view&model === data view data&view
+
+
+2.css.loder & style.loder
+css.loder     equal  @import
+style.loder   equal  current page style
+
+
+3.v-for & v-if
+v-for > v-if
+
+
+4.@keyup...
+@keyup.enter @keyup.tab @keyup.esc
+@keypress.delete @keypress.space 
+@keydown.left @keydown.right @keydown.up @keydown.down
+@keypress.shift alt ctrl meta
+
+
+5.vue-cli
+cnpm install vue-cli -g
+vue init webpack test
+cd test
+npm install
+npm run dev
+
+
+6.v-once
+if this text is sure you should use v-once
+
+
+7.
+再次提示主逻辑代码都是写在.App.vue中,所有其它的组件代码都是写在componentes里
+
+
+8.Event Modifier
+.stop .prevent .self .native .once
+
+
+9.js路径
+./ first go out self
+
+
+10.
+我们使用 ES2015 的属性的简洁表示法去定义子组件，{ ComponentA } 是 { ComponentA: ComponentA } 的简写，Vue 会自动的将 key 转换为component-a，所以你可以在 template 中使用 <component-a>.
+
+
+11.
+面代码是一个模块文件export-default.js，它的默认输出是一个函数。
+其他模块加载该模块时，import命令可以为该匿名函数指定任意名字。
+
+
+12.
+npm i vue-resource vue-router vuex bootstrap --save
+
+
+13.启动打包好的 dist  加 ./ 才能看
+npm run build
+npm i http-server -g
+在当前目录 http-server
+
+
+14.vue-devtools 调试工具
+github下载地址：https://github.com/vuejs/vue-devtools
+
+下载好后进入vue-devtools-master工程  执行npm install ----->npm run build.
+
+修改manifest.json 中的persistent为true
+
+打开谷歌浏览器设置--->扩展程序--》勾选开发者模式---》添加工程中的shells-->chrome的内容或者直接拖动shells-->chrome，至此恭喜已经安装成功！！！
+
+ 
+15.select 绑定
+无value的时候 v-model="selected" 可以和选中值连接
+要用其他字符串表示则要有value  <option value="男"></option>   v-model="sex"
+
+
+16.删除当前值
+循环的时候 传 (item,i) in items
+
+
+17.数组操作
+push pop shift unshift splice reverse sort
+变异方法(mutation method)，顾名思义，会改变被这些方法调用的原始数组
+
+filter(), concat(), slice() 这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组：
+
+
+18.字符串操作
+substr(1,4) 获取从1开始，的4个字符串
+substr(-2,4) 获取从-2开始，的4个字符串
+substr(1) 获取从1开始的全部字符串
+未标准化，不赞成使用 只是字符串
+返回新的字符串
+
+substring(1,4) 获取1,2,3位置的值，
+substring(1)   获取1以后的值，
+不可有负的参数 只是字符串
+返回新的字符串
+
+slice(1,4) 获取1,2,3位置的值，
+slice(1)   获取1以后的值，
+可以有负的参数
+返回新的字符串
+
+splice(1,4) 获取1,2,3位置的值，
+splice(1)   获取1以后的值，
+可以有负的参数 只是数组
+改变数组本身
+返回新的数组
+
+19.reg
+global	RegExp 对象是否具有标志 g。	
+ignoreCase	RegExp 对象是否具有标志 i。	
+lastIndex	一个整数，标示开始下一次匹配的字符位置。	
+multiline	RegExp 对象是否具有标志 m。	
+source	正则表达式的源文本。	
+
+
+20.过滤器
+filter 只能在 v-bind 和 {{}} 中使用
+他的本来用意就是来过滤输出文本
+可以同时使用多个，默认传的参数就是填的数据
+
+
+21.组件
+全局组件 复用公共的代码 如头部等
+局部组件
+路由
+
+
+22.函数注意
+data:function(){}  data(){} 是等同的
+
+
+23.
+使用要引入Vue
+每个组件只能有一个最外层div
+最后面可以有逗号
+
+
+23.es6函数
+参数默认值
+长度不算-1
+undefined
+
+
+24.文件路径
+./ 当前目录 ../往上找一级 ../../往上找2级
+
+
+25.父子组件访问
+this.$parent.msg1
+this.children[0].msg2
+ref="a"   this.refs.a.msg3  指定 ref 来访问指定的子组件
+
+ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 $refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素; 如果用在子组件上，引用就指向组件实例:
+
+
+26.一些特殊的
+v-pre v-cloak 
+v-once 渲染一次
+
+事件修饰符
+@click.stop prevent once self capture native
+
+model修饰符
+v-model.lazy="msg"   失去焦点才更新
+v-model.trim="msg"
+v-model.number="msg"
+
+
+27.数据传到父级
+v-on 监听子组件函数触发时执行
+v-on:close="this.msg=false"
+
+子组件点击时触发自定义函数
+@click="this.$emit(close)"
+
+
+
+28.axios 中文翻译
+https://segmentfault.com/a/1190000008470355?utm_source=tuicool&utm_medium=referral#articleHeader2
+
+
+axios 不支持 jsonp
+npm i jsonp -S 替换
+
+var jsonp = require('jsonp');
+jsonp('http://www.example.com/foo', null, function (err, data) {
+  if (err) {
+    console.error(err.message);
+  } else {
+    console.log(data);
+  }
+});
+
+
+
+29.计算属性
+多次使用，反复调用的方法，
+用计算属性，第二次直接读取缓存，而不去执行方法
+优化性能，特别是复杂的计算
+
+
+30.v-if v-for 都是懒惰模式，加key控制
+Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这么做，除了使 Vue 变得非常快之外，还有一些有用的好处。例如，如果你允许用户在不同的登录方式之间切换:
+
+这样也不总是符合实际需求，所以 Vue 为你提供了一种方式来声明“这两个元素是完全独立的——不要复用它们”。只需添加一个具有唯一值的 key 属性即可：
+
+v-show 不支持 <template> 语法，也不支持 v-else。
+
+
+31.过渡
+my-enter         要定义，因为不知道刚进来是0还是1 
+my-enter-active  不能有值，因为元素一插入就生效，加值要把enter放后面覆盖
+my-leave         永远是1
+my-leave-acive   过渡和值在一起
+
+.my-enter{
+	opacity:0
+}
+.my-enter-active{
+	transition:all 2s ease 1s;
+}
+.my-leave-active{
+	transition:all 2s ease 1s;
+	opacity:0
+}
+
+
+
+
+
+
+
+</pre>
+
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
+
+
